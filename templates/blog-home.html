@@ -1,3 +1,4 @@
+	{%load static%}
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -55,24 +56,21 @@
 				<div class="container main-menu">
 					<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" title="" /></a>
+				        <a href="{%url 'website:index' %}"><img src="{% static 'img/logo.png' %}" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li><a href="index.html">Home</a></li>
-				          <li><a href="about.html">About</a></li>
-				          <li><a href="packages.html">Packages</a></li>
-				          <li><a href="hotels.html">Hotels</a></li>
-				          <li><a href="insurance.html">Insurence</a></li>
+				          <li><a href="{%url 'website:index' %}">Home</a></li>
+				          <li><a href="{%url 'website:about' %}">About</a></li>
 				          <li class="menu-has-children"><a href="">Blog</a>
 				            <ul>
-				              <li><a href="{%url 'blog:index_ '%}">Blog Home</a></li>
-				              <li><a href="{% url 'blog:single' %}">Blog Single</a></li>
+				              <li><a href="{%url 'blog:index_blog' %}">Blog Home</a></li>
+				              <li><a href="{%url 'blog:single' %}">Blog Single</a></li>
 				            </ul>
 				          </li>	
 				          <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>
-				            	  <li><a href="elements.html">Elements</a></li>
+				            	  <li><a href="{%url 'website:elements' %}">Elements</a></li>
 						          <li class="menu-has-children"><a href="">Level 2 </a>
 						            <ul>
 						              <li><a href="#">Item One</a></li>
@@ -81,7 +79,7 @@
 						          </li>					                		
 				            </ul>
 				          </li>					          					          		          
-				          <li><a href="contact.html">Contact</a></li>
+				          <li><a href="{%url 'website:contact' %}">Contact</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->					      		  
 					</div>
@@ -100,8 +98,7 @@
 							</h1>	
 							<p class="text-white">
 								There is a moment in the life of any aspiring astronomer that it is time to buy that first
-							</p>
-							<a href="{% url 'blog:single' %}" class="primary-btn">View More</a>
+							</p>							
 						</div>	
 					</div>
 				</div>
@@ -192,11 +189,11 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg' %}" alt="">
 									</div>
-									<a class="posts-title" href="{% url 'blog:single' %}"><h3>Astronomy Binoculars A Great Alternative</h3></a>
+									<a class="posts-title" href="{%url 'blog:single' %}"><h3>Astronomy Binoculars A Great Alternative</h3></a>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
 									</p>
-									<a href="{% url 'blog:single' %}" class="primary-btn">View More</a>
+									<a href="{%url 'blog:single' %}" class="primary-btn">View More</a>
 								</div>
 							</div>
 							<div class="single-post row">
@@ -218,37 +215,11 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="{% static 'img/blog/feature-img2.jpg' %}" alt="">
 									</div>
-									<a class="posts-title" href="{% url 'blog:single' %}"><h3>The Basics Of Buying A Telescope</h3></a>
+									<a class="posts-title" href="{%url 'blog:single' %}"><h3>The Basics Of Buying A Telescope</h3></a>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
 									</p>
-									<a href="{% url 'blog:single' %}" class="primary-btn">View More</a>
-								</div>
-							</div>
-							<div class="single-post row">
-								<div class="col-lg-3  col-md-3 meta-details">
-									<ul class="tags">
-										<li><a href="#">Food,</a></li>
-										<li><a href="#">Technology,</a></li>
-										<li><a href="#">Politics,</a></li>
-										<li><a href="#">Lifestyle</a></li>
-									</ul>
-									<div class="user-details row">
-										<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span class="lnr lnr-user"></span></p>
-										<p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span class="lnr lnr-calendar-full"></span></p>
-										<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
-										<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>						
-									</div>
-								</div>
-								<div class="col-lg-9 col-md-9">
-									<div class="feature-img">
-										<img class="img-fluid" src="{% static 'img/blog/feature-img3.jpg' %}" alt="">
-									</div>
-									<a class="posts-title" href="{% url 'blog:single' %}"><h3>The Glossary Of Telescopes</h3></a>
-									<p class="excert">
-										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
-									</p>
-									<a href="{% url 'blog:single' %}" class="primary-btn">View More</a>
+									<a href="{%url 'blog:single' %}" class="primary-btn">View More</a>
 								</div>
 							</div>
 							<div class="single-post row">
@@ -270,11 +241,11 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="{% static 'img/blog/feature-img4.jpg' %}" alt="">
 									</div>
-									<a class="posts-title" href="{% url 'blog:single' %}"><h3>The Night Sky</h3></a>
+									<a class="posts-title" href="{%url 'blog:single' %}"><h3>The Night Sky</h3></a>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
 									</p>
-									<a href="{% url 'blog:single' %}" class="primary-btn">View More</a>
+									<a href="{%url 'blog:single' %}" class="primary-btn">View More</a>
 								</div>
 							</div>
 							<div class="single-post row">
@@ -296,11 +267,11 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="{% static 'img/blog/feature-img5.jpg' %}" alt="">
 									</div>
-									<a class="posts-title" href="{% url 'blog:single' %}"><h3>Telescopes 101</h3></a>
+									<a class="posts-title" href="{%url 'blog:single' %}"><h3>Telescopes 101</h3></a>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
 									</p>
-									<a href="{% url 'blog:single' %}" class="primary-btn">View More</a>
+									<a href="{%url 'blog:single' %}" class="primary-btn">View More</a>
 								</div>
 							</div>														
 		                    <nav class="blog-pagination justify-content-center d-flex">
@@ -359,7 +330,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp1.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{% url 'blog:single' %}"><h6>Space The Final Frontier</h6></a>
+												<a href="{%url 'blog:single' %}"><h6>Space The Final Frontier</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -368,7 +339,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp2.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{% url 'blog:single' %}"><h6>The Amazing Hubble</h6></a>
+												<a href="{%url 'blog:single' %}"><h6>The Amazing Hubble</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -377,7 +348,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp3.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{% url 'blog:single' %}"><h6>Astronomy Or Astrology</h6></a>
+												<a href="{%url 'blog:single' %}"><h6>Astronomy Or Astrology</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -386,7 +357,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp4.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{% url 'blog:single' %}"><h6>Asteroids telescope</h6></a>
+												<a href="{%url 'blog:single' %}"><h6>Asteroids telescope</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>															

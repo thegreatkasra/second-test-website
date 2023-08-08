@@ -1,3 +1,4 @@
+	{%load static%}
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -55,24 +56,21 @@
 				<div class="container main-menu">
 					<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" title="" /></a>
+				        <a href="{%url 'website:index' %}"><img src="{% static 'img/logo.png' %}" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li><a href="index.html">Home</a></li>
-				          <li><a href="about.html">About</a></li>
-				          <li><a href="packages.html">Packages</a></li>
-				          <li><a href="hotels.html">Hotels</a></li>
-				          <li><a href="insurance.html">Insurence</a></li>
+				          <li><a href="{%url 'website:index' %}">Home</a></li>
+				          <li><a href="{%url 'website:about' %}">About</a></li>
 				          <li class="menu-has-children"><a href="">Blog</a>
 				            <ul>
-				              <li><a href="{%url 'blog:index_ '%}">Blog Home</a></li>
-				              <li><a href="{% url 'blog:single' %}">Blog Single</a></li>
+				              <li><a href="{%url 'blog:index_blog' %}">Blog Home</a></li>
+				              <li><a href="{%url 'blog:single' %}">Blog Single</a></li>
 				            </ul>
 				          </li>	
 				          <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>
-				            	  <li><a href="elements.html">Elements</a></li>
+				            	  <li><a href="{%url 'website:elements' %}">Elements</a></li>
 						          <li class="menu-has-children"><a href="">Level 2 </a>
 						            <ul>
 						              <li><a href="#">Item One</a></li>
@@ -81,7 +79,7 @@
 						          </li>					                		
 				            </ul>
 				          </li>					          					          		          
-				          <li><a href="contact.html">Contact</a></li>
+				          <li><a href="{%url 'website:contact' %}">Contact</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->					      		  
 					</div>
@@ -96,7 +94,7 @@
 							<h1 class="text-white">
 								Elements		
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="elements.html"> Elements</a></p>
+							<p class="text-white link-nav"><a href="{%url 'website:index' %}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{%url 'website:elements' %}"> Elements</a></p>
 						</div>	
 					</div>
 				</div>
@@ -367,28 +365,28 @@
 						<h3>Image Gallery</h3>
 						<div class="row gallery-item">
 							<div class="col-md-4">
-								<a href="{% static 'img/elements/g1.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url(img/elements/g1.jpg);"></div></a>
+								<a href="{% static 'img/elements/g1.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url({% static 'img/elements/g1.jpg);"></div></a>
 							</div>
 							<div class="col-md-4">
-								<a href="{% static 'img/elements/g2.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url(img/elements/g2.jpg);"></div></a>
+								<a href="{% static 'img/elements/g2.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url({% static 'img/elements/g2.jpg);"></div></a>
 							</div>
 							<div class="col-md-4">
-								<a href="{% static 'img/elements/g3.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url(img/elements/g3.jpg);"></div></a>
+								<a href="{% static 'img/elements/g3.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url({% static 'img/elements/g3.jpg);"></div></a>
 							</div>
 							<div class="col-md-6">
-								<a href="{% static 'img/elements/g4.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url(img/elements/g4.jpg);"></div></a>
+								<a href="{% static 'img/elements/g4.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url({% static 'img/elements/g4.jpg);"></div></a>
 							</div>
 							<div class="col-md-6">
-								<a href="{% static 'img/elements/g5.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url(img/elements/g5.jpg);"></div></a>
+								<a href="{% static 'img/elements/g5.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url({% static 'img/elements/g5.jpg);"></div></a>
 							</div>
 							<div class="col-md-4">
-								<a href="{% static 'img/elements/g6.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url(img/elements/g6.jpg);"></div></a>
+								<a href="{% static 'img/elements/g6.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url({% static 'img/elements/g6.jpg);"></div></a>
 							</div>
 							<div class="col-md-4">
-								<a href="{% static 'img/elements/g7.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url(img/elements/g7.jpg);"></div></a>
+								<a href="{% static 'img/elements/g7.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url({% static 'img/elements/g7.jpg);"></div></a>
 							</div>
 							<div class="col-md-4">
-								<a href="{% static 'img/elements/g8.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url(img/elements/g8.jpg);"></div></a>
+								<a href="{% static 'img/elements/g8.jpg' %}" class="img-gal"><div class="single-gallery-image" style="background: url({% static 'img/elements/g8.jpg);"></div></a>
 							</div>
 						</div>
 					</div>
