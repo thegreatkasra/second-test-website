@@ -1,13 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render ,get_object_or_404
 from blog.models import Post
+from django.utils import timezone
+
 
 def blog_view(request):
-    posts = Post.objects.all()
+    #در view مربوط به لیست پست‌هایی که فیلتر صورت میگیرد چگونه می‌توان پست‌ها را مبتنی بر زمانی که برای published در نظر گرفته شده است فیلتر کرد. این فیلتر بایستی به گونه‌ای باشد که زمان در نظر گرفته شده برای بخش published_date را گرفته و با زمان حاضر مقایسه کند، اگر از زمان فعلی گذشته باشد می‌بایست نمایش داده شود و در غیر اینصورت خیر.
+    current_time = timezone.now()  
+    posts = Post.objects.filter(published_date__lte=current_time)
     context = {'posts':posts}
     return render(request,'blog-home.html',context)
 
-def blog_single(request):
-    return render(request,'blog-single.html')
+def blog_single(request, pid):
+    #در view مربوط به نمایش تک پست تابعی درج کنید که با هر بار فراخوانی view مربوط به هر پست یک واحد به خصوصیت counted_view آن پست اضافه شود
+    post = get_object_or_404(Post, pk=pid)
+    post.counted_views += 1
+    post.save()
+
+    context = {
+        'post': post,
+    }
+    return render(request,'blog-single.html',context)
 
 
 

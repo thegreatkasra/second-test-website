@@ -63,12 +63,7 @@
 				        <ul class="nav-menu">
 				          <li><a href="{%url 'website:index' %}">Home</a></li>
 				          <li><a href="{%url 'website:about' %}">About</a></li>
-				          <li class="menu-has-children"><a href="">Blog</a>
-				            <ul>
-				              <li><a href="{%url 'blog:index_blog' %}">Blog Home</a></li>
-				              <li><a href="{%url 'blog:single' %}">Blog Single</a></li>
-				            </ul>
-				          </li>	
+				          <li><a href="{%url 'blog:index_blog' %}">Blog Home</a></li>
 				          <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>
 				            	  <li><a href="{%url 'website:elements' %}">Elements</a></li>
@@ -171,9 +166,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 posts-list">
-							
-							{%for post in posts%}
-							{{posts}}
+							{{post}}
+							{%for post in posts%}							
 							<div class="single-post row">
 								<div class="col-lg-3  col-md-3 meta-details">
 									<ul class="tags">
@@ -193,14 +187,14 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg' %}" alt="">
 									</div>
-									<a class="posts-title" href="{%url 'blog:single' %}"><h3>{{post.title}}</h3></a>
+									<a class="posts-title" href="/blog/{{post.id}}"><h3>{{post.title}}</h3></a>
 									<p class="excert">
 										{{post.content}}
 									</p>
-									<a href="{%url 'blog:single' %}" class="primary-btn">View More</a>
+									<a href="/blog/{{post.id}}" class="primary-btn">View More</a>
 								</div>
 							</div>				
-							{%endfor%}			
+							{% endfor %}			
 		                    <nav class="blog-pagination justify-content-center d-flex">
 		                        <ul class="pagination">
 		                            <li class="page-item">
@@ -257,7 +251,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp1.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{%url 'blog:single' %}"><h6>Space The Final Frontier</h6></a>
+												<a href="#"><h6>Space The Final Frontier</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -266,7 +260,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp2.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{%url 'blog:single' %}"><h6>The Amazing Hubble</h6></a>
+												<a href="#"><h6>The Amazing Hubble</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -275,7 +269,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp3.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{%url 'blog:single' %}"><h6>Astronomy Or Astrology</h6></a>
+												<a href="#"><h6>Astronomy Or Astrology</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -284,7 +278,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp4.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{%url 'blog:single' %}"><h6>Asteroids telescope</h6></a>
+												<a href="#"><h6>Asteroids telescope</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>															

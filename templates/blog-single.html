@@ -62,12 +62,7 @@
 				        <ul class="nav-menu">
 				          <li><a href="{%url 'website:index' %}">Home</a></li>
 				          <li><a href="{%url 'website:about' %}">About</a></li>
-				          <li class="menu-has-children"><a href="">Blog</a>
-				            <ul>
-				              <li><a href="{%url 'blog:index_blog' %}">Blog Home</a></li>
-				              <li><a href="{%url 'blog:single' %}">Blog Single</a></li>
-				            </ul>
-				          </li>	
+				          <li><a href="{%url 'blog:index_blog' %}">Blog Home</a></li>
 				          <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>
 				            	  <li><a href="{%url 'website:elements' %}">Elements</a></li>
@@ -95,7 +90,7 @@
 							<h1 class="text-white">
 								Blog Details Page				
 							</h1>	
-							<p class="text-white link-nav"><a href="{%url 'website:index' %}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{%url 'blog:index_blog' %}">Blog </a> <span class="lnr lnr-arrow-right"></span> <a href="{%url 'blog:single' %}"> Blog Details Page</a></p>
+							<p class="text-white link-nav"><a href="{%url 'website:index' %}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{%url 'blog:index_blog' %}">Blog </a> <span class="lnr lnr-arrow-right"></span> <a href="#"> Blog Details Page</a></p>
 						</div>	
 					</div>
 				</div>
@@ -107,6 +102,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 posts-list">
+						
+
 							<div class="single-post row">
 								<div class="col-lg-12">
 									<div class="feature-img">
@@ -134,6 +131,7 @@
 									</div>
 								</div>
 								<div class="col-lg-9 col-md-9">
+									
 									<h3 class="mt-20 mb-20">Astronomy Binoculars A Great Alternative</h3>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
@@ -346,7 +344,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp1.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{%url 'blog:single' %}"><h6>Space The Final Frontier</h6></a>
+												<a href="#"><h6>Space The Final Frontier</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -355,7 +353,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp2.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{%url 'blog:single' %}"><h6>The Amazing Hubble</h6></a>
+												<a href="#"><h6>The Amazing Hubble</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -364,7 +362,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp3.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{%url 'blog:single' %}"><h6>Astronomy Or Astrology</h6></a>
+												<a href="#"><h6>Astronomy Or Astrology</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -373,7 +371,7 @@
 												<img class="img-fluid" src="{% static 'img/blog/pp4.jpg' %}" alt="">
 											</div>
 											<div class="details">
-												<a href="{%url 'blog:single' %}"><h6>Asteroids telescope</h6></a>
+												<a href="#"><h6>Asteroids telescope</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>															
