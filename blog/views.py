@@ -11,8 +11,10 @@ def blog_view(request):
     return render(request,'blog-home.html',context)
 
 def blog_single(request, pid):
-    #در view مربوط به نمایش تک پست تابعی درج کنید که با هر بار فراخوانی view مربوط به هر پست یک واحد به خصوصیت counted_view آن پست اضافه شود
-    post = get_object_or_404(Post, pk=pid)
+     #status=1 فقط به منتشر شده ها دسترسی نمایش میده
+     #get_object_or_404 :  یعنی اگر نبود پیام 404 
+    post = get_object_or_404(Post, pk=pid, status=1)
+    #هر با دیده شود یکی اضافه کند
     post.counted_views += 1
     post.save()
 
