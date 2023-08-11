@@ -11,17 +11,21 @@ def blog_view(request):
     return render(request,'blog-home.html',context)
 
 def blog_single(request, pid):
+    all_posts = Post.objects.all()
      #status=1 فقط به منتشر شده ها دسترسی نمایش میده
      #get_object_or_404 :  یعنی اگر نبود پیام 404 
-    post = get_object_or_404(Post, pk=pid, status=1)
+    post = get_object_or_404(all_posts, pk=pid, status=1)
     #هر با دیده شود یکی اضافه کند
     post.counted_views += 1
     post.save()
 
+    prev_post = all_posts.filter(pk__lt=pid).last()
+    next_post = all_posts.filter(pk__gt=pid).first()
+    
     context = {
         'post': post,
+        'prev_post': prev_post,
+        'next_post': next_post,
     }
     return render(request,'blog-single.html',context)
-
-
 
