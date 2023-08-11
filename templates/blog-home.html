@@ -1,5 +1,7 @@
 	{%load static%}
 	
+
+	
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -189,7 +191,8 @@
 									</div>
 									<a class="posts-title" href="{% url 'blog:single' pid=post.id  %}"><h3>{{post.title}}</h3></a>
 									<p class="excert">
-										{{post.content}}
+										{% load custom_tags %}
+										{{post.content|limit_words_with_ellipsis:10}}
 									</p>
 									<a href="/blog/{{post.id}}" class="primary-btn">View More</a>
 								</div>
