@@ -7,7 +7,7 @@ class Category(models.Model):
             return self.name
 class Post(models.Model):
     image =models.ImageField(upload_to='blog/',default='blog/default.jpg')
-    #authorیک کلید فرعی وابسطغ به یوزر
+    #authorیک کلید فرعی واسطه به یوزر
     author = models.ForeignKey(User, on_delete=models.CASCADE ,null=True)
     title = models.CharField(max_length=255)
     content = models.TextField()

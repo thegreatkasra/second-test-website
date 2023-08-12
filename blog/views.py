@@ -5,21 +5,23 @@ from django.utils import timezone
 def blog_view(request):
     #در view مربوط به لیست پست‌هایی که فیلتر صورت میگیرد چگونه می‌توان پست‌ها را مبتنی بر زمانی که برای published در نظر گرفته شده است فیلتر کرد. این فیلتر بایستی به گونه‌ای باشد که زمان در نظر گرفته شده برای بخش published_date را گرفته و با زمان حاضر مقایسه کند، اگر از زمان فعلی گذشته باشد می‌بایست نمایش داده شود و در غیر اینصورت خیر.
     current_time = timezone.now()  
-    posts = Post.objects.filter(published_date__lte=current_time)
+    posts = Post.objects.filter(published_date__lte=current_time,status=1).order_by('published_date')
     context = {'posts':posts}
     return render(request,'blog-home.html',context)
 
 def blog_single(request, pid):
+
+    current_time = timezone.now() 
     all_posts = Post.objects.all()
      #status=1 فقط به منتشر شده ها دسترسی نمایش میده
      #get_object_or_404 :  یعنی اگر نبود پیام 404 
-    post = get_object_or_404(all_posts, pk=pid, status=1)
+    post = get_object_or_404(all_posts, pk=pid, status=1 ,published_date__lte=current_time)
     #هر با دیده شود یکی اضافه کند
     post.counted_views += 1
     post.save()
 
-    prev_post = all_posts.filter(pk__lt=pid).last()
-    next_post = all_posts.filter(pk__gt=pid).first()
+    prev_post = all_posts.filter(pk__lt=pid,status=1).last()
+    next_post = all_posts.filter(pk__gt=pid,status=1).first()
     
     context = {
         'post': post,
