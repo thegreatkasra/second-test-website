@@ -30,3 +30,7 @@ def postcategories():
         cat_dict[name] = posts.filter(category=name).count()
     return {'categories': cat_dict}
 
+#search bar widget
+@register.inclusion_tag('blog-search.html')
+def search_bar():
+    return {}

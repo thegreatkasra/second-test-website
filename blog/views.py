@@ -13,7 +13,6 @@ def blog_view(request,author_username=None):
     
 
 def blog_single(request, pid):
-
     current_time = timezone.now() 
     all_posts = Post.objects.all()
      #status=1 فقط به منتشر شده ها دسترسی نمایش میده
@@ -39,3 +38,11 @@ def blog_category(request, cat_name):
     posts = posts.filter(category__name=cat_name)
     context = {'posts':posts}
     return render(request,'categories-posts.html',context)
+
+#SEARCH function
+def blog_search(request):
+    posts = Post.objects.filter(status=1)
+    if request.method == 'GET':
+        posts = posts.filter(content__contains = request.GET.get('s'))
+    context = {'posts':posts}
+    return render(request,'blog-home.html',context)

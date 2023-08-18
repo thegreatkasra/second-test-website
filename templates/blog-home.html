@@ -227,12 +227,9 @@
 						</div>
 						<div class="col-lg-4 sidebar-widgets">
 							<div class="widget-wrap">
-								<div class="single-sidebar-widget search-widget">
-									<form class="search-form" action="#">
-			                            <input placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'" >
-			                            <button type="submit"><i class="fa fa-search"></i></button>
-			                        </form>
-								</div>
+
+								{% search_bar %}
+
 								<div class="single-sidebar-widget user-info-widget">
 									<img src="{% static 'img/blog/user-info.png' %}" alt="">
 									<a href="#"><h4>Charlie Barber</h4></a>
