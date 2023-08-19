@@ -1,6 +1,7 @@
 from django.shortcuts import render ,get_object_or_404
 from blog.models import Post
 from django.utils import timezone
+from django.core.paginator  import Paginator ,EmptyPage ,PageNotAnInteger
 
 def blog_view(request,author_username=None):
     #در view مربوط به لیست پست‌هایی که فیلتر صورت میگیرد چگونه می‌توان پست‌ها را مبتنی بر زمانی که برای published در نظر گرفته شده است فیلتر کرد. این فیلتر بایستی به گونه‌ای باشد که زمان در نظر گرفته شده برای بخش published_date را گرفته و با زمان حاضر مقایسه کند، اگر از زمان فعلی گذشته باشد می‌بایست نمایش داده شود و در غیر اینصورت خیر.
@@ -8,6 +9,17 @@ def blog_view(request,author_username=None):
     posts = Post.objects.filter(published_date__lte=current_time,status=1).order_by('published_date')
     if author_username:
         posts = posts.filter(author__username=author_username)
+
+    #Pagination(next-previous page)
+    posts = Paginator(posts,2)
+    try:
+        page_number = request.GET.get('page')
+        posts = posts.get_page(page_number)
+    except PageNotAnInteger:
+        posts = posts.get_page(1)
+    except EmptyPage:
+        posts = posts.get_page(1)
+
     context = {'posts':posts}
     return render(request,'blog-home.html',context)
     
