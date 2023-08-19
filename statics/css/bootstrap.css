@@ -515,6 +515,10 @@ mark,
   max-width: 100%;
   height: auto;
 }
+.img_fluid2 {
+  width: 80px;
+  height: 100px;
+}
 
 .img-thumbnail {
   padding: 0.25rem;
