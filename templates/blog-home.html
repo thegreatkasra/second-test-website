@@ -194,7 +194,7 @@
 									</div>
 									<a class="posts-title" href="{% url 'blog:single' pid=post.id  %}"><h3>{{post.title}}</h3></a>
 									<p class="excert">
-										{% load custom_tags %}
+										
 										{{post.content|limit_words_with_ellipsis:10}}
 									</p>
 									<a href="/blog/{{post.id}}" class="primary-btn">View More</a>
