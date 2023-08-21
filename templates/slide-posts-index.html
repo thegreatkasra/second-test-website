@@ -10,8 +10,8 @@
         <div class="details">
             <div class="tags">
                 <ul>
-                    <li>
-                        <a href="#">
+                    
+                    <a href="#">
                             {% for cat in post.category.all %}
 										<li>
 											<a href="{% url 'blog:category' cat_name=cat.name %}">
@@ -19,8 +19,8 @@
 											</a>
 										</li>
 										{% endfor %}
-                        </a>
-                    </li>
+                    </a>
+                    
                 
                 </ul>
             </div>
