@@ -30,6 +30,7 @@
 			<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
 			<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">				
 			<link rel="stylesheet" href="{% static 'css/main.css' %}">
+			<script src="{% static 'js/popup-content.js' %}"></script>
 		</head>
 		<body>	
 			<header id="header">
@@ -136,25 +137,31 @@
 						
 						<div class="col-lg-8">
 
-							<form class="form-area contact-form text-right"  action="{% url 'website:contact' %}" method="post">
+							<form class="form-area contact-form text-right" id="contact-form" action="{% url 'website:contact' %}" method="post">
 								<div class="row">	
 									{% csrf_token %}
 									<div class="col-lg-6 form-group">
 										<input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
-									
 										<input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
-
-										<input name="subject" placeholder="Enter subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control" required="" type="text">
+										<input name="subject" placeholder="Enter subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control" type="text">
 									</div>
 									<div class="col-lg-6 form-group">
-										<textarea class="common-textarea form-control" name="message" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>				
+										<textarea class="common-textarea form-control" name="message" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" required=""></textarea>				
 									</div>
 									<div class="col-lg-12">
 										<div class="alert-msg" style="text-align: left;"></div>
-										<button type ='submit'class="genric-btn primary" style="float: right;">Send Message</button>											
+										<button type="submit" class="genric-btn primary" style="float: right;">Send Message</button>
 									</div>
 								</div>
-							</form>	
+							</form>
+							{% if messages %}
+							<ul class="messages">
+   								 {% for message in messages %}
+   								 <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    							{% endfor %}
+							</ul>
+							{% endif %}
+
 						</div>
 					</div>
 				</div>	
@@ -260,5 +267,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="{% static 'js/owl.carousel.min.js' %}"></script>							
 			<script src="{% static 'js/mail-script.js' %}"></script>	
 			<script src="{% static 'js/main.js' %}"></script>	
+			
 		</body>
 	</html>

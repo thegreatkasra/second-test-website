@@ -1,4 +1,4 @@
-from django import forms    
+from django import forms
 from website.models import Contact , Newsletter
 
 class NameForm(forms.Form):
@@ -8,11 +8,21 @@ class NameForm(forms.Form):
     massage = forms.CharField(widget=forms.Textarea)
 
 class ContactForm(forms.ModelForm):
+    subject = forms.CharField(required=False)
     class Meta:
         model = Contact
         fields = ['name', 'subject','email', 'message']
 
+        def clean_name(self):
+            return 'unknown'
+        
+    
+    
+
+        
+    
 class NewsletterForm(forms.ModelForm):
     class Meta:
         model = Newsletter
         fields = ['email']
+
