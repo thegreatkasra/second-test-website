@@ -34,3 +34,5 @@ def postcategories():
 @register.inclusion_tag('blog-search.html')
 def search_bar():
     return {}
+
+

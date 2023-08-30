@@ -38,7 +38,26 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
     'blog.apps.BlogConfig',
+#extentions:
+    'django.contrib.humanize',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'robots',
+    'taggit',
+
 ]
+
+#sites framework id for SEO:
+SITE_ID = 2
+
+#Robot cnfigurations:
+ROBOTS = {
+    "User-agent": "*",
+    "Disallow": ["/private/", "/admin/"],
+    "Allow": ["/public/"],
+    "Crawl-delay": 5,
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
