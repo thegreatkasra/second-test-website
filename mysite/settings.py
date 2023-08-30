@@ -26,10 +26,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'    #for summernote security
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',   #Admin Captcha
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,14 +41,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
     'blog.apps.BlogConfig',
+    'accounts',
 #extentions:
     'django.contrib.humanize',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'robots',
     'taggit',
+    'django_summernote',
+    'captcha',
 
 ]
+
+
+#catpcha (simple-captcha) for admin.py
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
+}
 
 #sites framework id for SEO:
 SITE_ID = 2

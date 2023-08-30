@@ -2,7 +2,6 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render 
 from website.forms import ContactForm , NewsletterForm 
 from django.contrib import messages
-from django.http import JsonResponse
 
 def index(request):
     return render(request,'index.html')
