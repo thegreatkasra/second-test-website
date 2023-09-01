@@ -17,11 +17,7 @@ class ContactForm(forms.ModelForm):
 
         def clean_name(self):
             return 'unknown'
-        
-    
-    
-
-        
+           
     
 class NewsletterForm(forms.ModelForm):
     class Meta:

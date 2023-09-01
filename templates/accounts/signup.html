@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">Login</h2>
+                    <h2 class="heading-section">Signup</h2>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -26,21 +26,33 @@
                         <form action="{% url 'accounts:signup' %}" class="signin-form" method="post">
                             {% csrf_token %}
                             <div class="form-group">
-                                
-                                {{form.as_p}}
-
+                                <input type="text" class="form-control" name="username" placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input name="password1" type="password" class="form-control" placeholder="Password"
+                                    required>
+                                <span toggle="#password-field"
+                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <input name="password2" type="password" class="form-control"
+                                    placeholder="Retype password" required>
+                                <span toggle="#password-field"
+                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control submit px-3">Sign up</button>
-                            </div>
-                            <!--   <div class="form-group d-md-flex">
+                                <!--   <div class="form-group d-md-flex">
                                 <div class="w-50">
                                     <label class="checkbox-wrap checkbox-primary">Remember Me
                                         <input type="checkbox" checked>
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>                              -->
-                              <!--  <div class="w-50 text-md-right">
+                                <!--  <div class="w-50 text-md-right">
                                     <a href="#" style="color: #fff">Forgot Password</a>
                                 </div>                              -->
                             </div>
@@ -52,10 +64,10 @@
                                 Facebook</a>
                             <a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span>
                                 Twitter</a> -->
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <script src="{% static 'js/js-1/jquery.js' %}"></script>
