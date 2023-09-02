@@ -164,6 +164,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+#login with email
+AUTHENTICATION_BACKENDS = [
+    
+    'mysite.custom_auth_backend.CustomBackend',
+    
+]
+
+
 
 
 #Email and Password_reset
@@ -172,6 +180,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'websiteback741@gmail.com'
-EMAIL_HOST_PASSWORD = 'Kasra2011'
+EMAIL_HOST_PASSWORD = 'wglfhppkzljalikj'
 
 

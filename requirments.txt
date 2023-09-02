@@ -6,3 +6,5 @@ pillow
 django-robots
 django_summernote
 django-multi-captcha-admin
+taggit
+captcha

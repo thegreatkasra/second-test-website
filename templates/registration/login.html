@@ -45,7 +45,7 @@
                             {% csrf_token %}
                             <div class="form-group">
                                 <input type="text" class="form-control" name="username"
-                                    placeholder="Username" required>
+                                    placeholder="Username or Email" required>
                             </div>
                             <div class="form-group">
                                 <input name="password" type="password" class="form-control" placeholder="Password"
@@ -70,11 +70,11 @@
                         </form>
 
                        
-                        <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+                      <!--  <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
                         <div class="social d-flex text-center">
-                            <a href="{% url 'accounts:login-email' %}" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span>
-                                Email</a>
-                           
+                            <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span>
+                                Email</a>   -->
+                                                      
                     </div>
                 </div>
             </div>
