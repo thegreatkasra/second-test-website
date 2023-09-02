@@ -3,7 +3,9 @@ from django.contrib.auth import authenticate , login ,logout
 from django.contrib.auth.forms import AuthenticationForm            #login
 from django.contrib.auth.decorators import login_required           # @login_required decorator !
 from accounts.forms import UserCreationForm                         #Signup
-from accounts.forms import CustomUserCreationForm
+from django.contrib.auth.views import PasswordResetView
+from django.urls import reverse_lazy
+from django import forms
 
 
 def login_view(request):
@@ -23,7 +25,7 @@ def login_view(request):
                         return render(request, 'accounts/login.html', {'error_message': 'Invalid username or password'})
         form = AuthenticationForm()
         context = {'form':form}
-        return render(request, 'accounts/login.html', context)
+        return render(request, 'registration/login.html', context)
     
 def login_view2(request):
     if not request.user.is_authenticated:
@@ -42,7 +44,7 @@ def login_view2(request):
                         return render(request, 'accounts/login-email.html', {'error_message': 'Invalid username or password'})
         form = AuthenticationForm()
         context = {'form':form}
-        return render(request, 'accounts/login-email.html', context)
+        return render(request, 'registration/login-email.html', context)
 
 
 @login_required
@@ -51,22 +53,30 @@ def logout_view(request):
     return redirect('/')
 
 
+#Signup_Form
+class CustomUserCreationForm(UserCreationForm):
+    email = forms.EmailField(required=True, help_text="Required. Enter a valid email address.")
+
 def signup_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
+            
             return redirect('/') 
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
 
-    return render(request, 'accounts/signup.html', {'form': form})
-
-
+    return render(request, 'registration/signup.html', {'form': form})
 
 
-
+#password_reset
+class CustomPasswordResetView(PasswordResetView):
+    template_name = 'password-reset.html'
+    email_template_name = 'password_reset_email.html'
+    subject_template_name = 'password_reset_subject.txt'
+    success_url = reverse_lazy('password_reset_done')
 
 
 

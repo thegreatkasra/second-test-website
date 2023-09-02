@@ -5,7 +5,7 @@ from captcha.fields import CaptchaField
 
 
 class CustomUserCreationForm(UserCreationForm):
-    email = forms.EmailField(required=True, label='Email')
+    email = forms.EmailField(required=True, label='email')
     captcha = CaptchaField()
 
     class Meta:
