@@ -59,12 +59,12 @@ def signup_view(request):
 
 
 
-#password_reset
+#Forget_password
 
 class CustomPasswordResetView(PasswordResetView):
-    template_name = 'password_reset.html'
-    email_template_name = 'password_reset_email.html'
-    subject_template_name = 'password_reset_subject.txt'
+    template_name = 'password_reset.html'                    #filename
+    email_template_name = 'password_reset_email.html'        #filename
+    subject_template_name = 'password_reset_subject.txt'     #filename
     success_url = reverse_lazy('password_reset_done')
 
 
