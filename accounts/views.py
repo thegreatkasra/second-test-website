@@ -1,12 +1,13 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate , login ,logout
 from django.contrib.auth.forms import AuthenticationForm            #login
-from django.contrib.auth.decorators import login_required           # @login_required decorator !
+from django.contrib.auth.decorators import login_required           #logout (@login_required decorator !)
 from django.contrib.auth.forms import UserCreationForm              #Signup
-from django.contrib.auth.views import PasswordResetView
-from django.urls import reverse_lazy
-from django import forms
-from django.contrib.auth.models import User
+from django import forms                                            #Signup
+from django.contrib.auth.models import User                         #Signup
+from django.contrib.auth.views import PasswordResetView             #passwordreset
+from django.urls import reverse_lazy                                #passwordreset
+
 
 
 
