@@ -7,6 +7,7 @@ from django import forms                                            #Signup
 from django.contrib.auth.models import User                         #Signup
 from django.contrib.auth.views import PasswordResetView             #passwordreset
 from django.urls import reverse_lazy                                #passwordreset
+from django.contrib import messages                                 #message
 
 
 
@@ -21,11 +22,14 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 return redirect('/')
+            else:
+                messages.error(request, 'Invalid username, email, or password. Please try again.')
+        else:
+            messages.error(request, 'Invalid username, email, or password. Please try again.')
     else:
         form = AuthenticationForm()
     
     return render(request, 'registration/login.html', {'form': form})
-
     
 
 
