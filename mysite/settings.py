@@ -59,7 +59,7 @@ MULTI_CAPTCHA_ADMIN = {
     'engine': 'simple-captcha',
 }
 
-#sites framework id for SEO:
+#sites_id framework for SEO:
 SITE_ID = 2
 
 #Robot cnfigurations:
@@ -79,6 +79,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'mysite.middleware.RedirectToSplashMiddleware'
 ]
 
 ROOT_URLCONF = 'mysite.urls'
