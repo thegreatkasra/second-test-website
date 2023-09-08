@@ -79,7 +79,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'mysite.middleware.RedirectToSplashMiddleware'
+    #'mysite.middleware.RedirectToSplashMiddleware'         Coming soon-Run middleware.py in mysite
 ]
 
 ROOT_URLCONF = 'mysite.urls'

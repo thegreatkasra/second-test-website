@@ -14,7 +14,7 @@ sitemaps = {
 
 
 urlpatterns = [        
-    path('', views.splash_page, name='splash_page'),              #coming soon page
+    #path('', views.splash_page, name='splash_page'),              #coming soon page
     path('admin/', admin.site.urls),
     path('', include('website.urls')),
     path('blog/',include('blog.urls')),
