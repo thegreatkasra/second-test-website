@@ -44,7 +44,3 @@ def Newsletter_view(request):
     else:
         return HttpResponseRedirect("/")
 
-
-#404 handler
-def custom_404(request, exception):
-    return render(request, '404.html', {}, status=404)

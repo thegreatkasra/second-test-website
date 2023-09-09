@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'taggit',
     'django_summernote',
     'captcha',
+    'compressor'
 
 ]
 
@@ -184,3 +185,11 @@ EMAIL_HOST_USER = 'websiteback741@gmail.com'
 EMAIL_HOST_PASSWORD = 'wglfhppkzljalikj'
 
 
+#compress
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+]

@@ -12,6 +12,3 @@ urlpatterns = [
     path('search/',blog_search, name ='search'),
     path('tag/<str:tag_name>',blog_view , name='tag'),
 ]
-
-#404 handler
-handler404 = 'website.views.custom_404'
